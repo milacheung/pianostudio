@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Music } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PointsDisplay } from '@/components/common/PointsDisplay';
+import { RoleBadge } from '@/components/common/RoleBadge';
 import { useAuth } from '@/context/AuthContext';
 
 export function Header() {
@@ -29,11 +30,12 @@ export function Header() {
           </h1>
         </Link>
 
-        {/* Right side - Points and Avatar */}
-        <div className="flex items-center gap-4">
+        {/* Right side - Points, Role Badge, and Avatar */}
+        <div className="flex items-center gap-3">
           {user && (
             <>
               <PointsDisplay points={0} size="sm" />
+              <RoleBadge role={user.role} />
               <Avatar className="h-9 w-9 border-2 border-piano-purple">
                 <AvatarImage src={user.avatarUrl} alt={user.name} />
                 <AvatarFallback className="bg-piano-purple text-white text-sm">

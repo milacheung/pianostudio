@@ -13,8 +13,10 @@ import java.util.Optional;
 @Repository
 public interface StudentProfileRepository extends JpaRepository<StudentProfile, Long> {
     Optional<StudentProfile> findByUserId(Long userId);
+    List<StudentProfile> findByStudioId(Long studioId);
     List<StudentProfile> findByStudioIdOrderByTotalPointsDesc(Long studioId);
     List<StudentProfile> findByParentId(Long parentId);
+    List<StudentProfile> findByParentEmail(String parentEmail);
     void deleteByUserId(Long userId);
 
     // Leaderboard queries

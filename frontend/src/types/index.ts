@@ -117,12 +117,24 @@ export interface StudentSummary {
   grade?: string;
   totalPoints?: number;
   currentStreak?: number;
+  // Parent invite fields (for teacher view)
+  parentEmail?: string;
+  parentInviteStatus?: 'none' | 'pending' | 'invited' | 'claimed';
+  parentName?: string;
 }
 
 export interface CreateStudentRequest {
   name: string;
   age?: number;
   grade?: string;
+}
+
+export interface TeacherCreateStudentRequest {
+  name: string;
+  age?: number;
+  grade?: string;
+  parentEmail?: string;
+  sendInvite?: boolean;
 }
 
 export interface PracticeStats {
@@ -250,4 +262,26 @@ export interface StudentBadge {
   id: number;
   badge: Badge;
   earnedAt: string;
+}
+
+// Magic Link Types
+export interface MagicLinkCheckResponse {
+  valid: boolean;
+  email?: string;
+  studentName?: string;
+  expired?: boolean;
+  used?: boolean;
+  message?: string;
+}
+
+export interface MagicLinkLoginResponse {
+  success: boolean;
+  token: string;
+  userId: number;
+  email: string;
+  name: string;
+  role: string;
+  newUser: boolean;
+  studentId: number;
+  studentName: string;
 }

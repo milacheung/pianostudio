@@ -2,6 +2,7 @@ package com.pianostudio.controller;
 
 import com.pianostudio.dto.CreateStudentRequest;
 import com.pianostudio.dto.StudentSummaryDTO;
+import com.pianostudio.dto.TeacherCreateStudentRequest;
 import com.pianostudio.model.User;
 import com.pianostudio.service.StudentService;
 import jakarta.validation.Valid;
@@ -70,6 +71,51 @@ public class StudentController {
             @PathVariable Long studentId,
             @AuthenticationPrincipal User parent) {
         studentService.deleteStudent(studentId, parent);
+        return ResponseEntity.noContent().build();
+    }
+
+    // ==================== Teacher Endpoints ====================
+
+    /**
+     * Get all students in the teacher's studio
+     */
+    @GetMapping("/studio")
+    public ResponseEntity<List<StudentSummaryDTO>> getStudioStudents(@AuthenticationPrincipal User teacher) {
+        List<StudentSummaryDTO> students = studentService.getStudentsForTeacher(teacher);
+        return ResponseEntity.ok(students);
+    }
+
+    /**
+     * Create a new student in the teacher's studio
+     */
+    @PostMapping("/studio")
+    public ResponseEntity<StudentSummaryDTO> createStudentAsTeacher(
+            @Valid @RequestBody TeacherCreateStudentRequest request,
+            @AuthenticationPrincipal User teacher) {
+        StudentSummaryDTO student = studentService.createStudentAsTeacher(request, teacher);
+        return ResponseEntity.ok(student);
+    }
+
+    /**
+     * Update a student in the teacher's studio
+     */
+    @PutMapping("/studio/{studentId}")
+    public ResponseEntity<StudentSummaryDTO> updateStudentAsTeacher(
+            @PathVariable Long studentId,
+            @Valid @RequestBody TeacherCreateStudentRequest request,
+            @AuthenticationPrincipal User teacher) {
+        StudentSummaryDTO student = studentService.updateStudentAsTeacher(studentId, request, teacher);
+        return ResponseEntity.ok(student);
+    }
+
+    /**
+     * Delete a student from the teacher's studio
+     */
+    @DeleteMapping("/studio/{studentId}")
+    public ResponseEntity<Void> deleteStudentAsTeacher(
+            @PathVariable Long studentId,
+            @AuthenticationPrincipal User teacher) {
+        studentService.deleteStudentAsTeacher(studentId, teacher);
         return ResponseEntity.noContent().build();
     }
 }

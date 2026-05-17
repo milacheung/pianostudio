@@ -14,6 +14,7 @@ import { TeacherSetupPage } from './pages/onboarding/TeacherSetupPage';
 import { ParentSetupPage } from './pages/onboarding/ParentSetupPage';
 import { JoinPage } from './pages/JoinPage';
 import { ConsentFormPage } from './pages/ConsentFormPage';
+import { MagicLinkLoginPage } from './pages/MagicLinkLoginPage';
 import { Toaster } from './components/ui/toaster';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -50,6 +51,9 @@ function AppRoutes() {
 
       {/* Public COPPA consent form */}
       <Route path="/consent/:token" element={<ConsentFormPage />} />
+
+      {/* Magic link login for parents */}
+      <Route path="/magic-login/:token" element={<MagicLinkLoginPage />} />
 
       {/* Onboarding routes */}
       <Route path="/onboarding" element={<RoleSelectionPage />} />

@@ -52,6 +52,11 @@ cloudinary:
 cors:
   allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
 
+# App Configuration
+app:
+  name: PianoStudio
+  base-url: ${APP_BASE_URL:http://localhost:5173}
+
 ---
 # Local Development Profile
 spring:

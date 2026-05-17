@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, TrendingUp, Loader2 } from 'lucide-react';
+import { BookOpen, TrendingUp, Loader2, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { apiService } from '@/services/api';
@@ -8,7 +8,8 @@ import { InviteCodeCard } from './InviteCodeCard';
 import { StudioStatsCards } from './StudioStatsCards';
 import { StudentListTable } from './StudentListTable';
 import { RecentActivityFeed } from './RecentActivityFeed';
-import type { TeacherDashboardData } from '@/types';
+import { AddStudentDialog } from '@/components/teacher/AddStudentDialog';
+import type { TeacherDashboardData, StudentSummary } from '@/types';
 
 export function TeacherDashboard() {
   const { user } = useAuth();
@@ -16,6 +17,33 @@ export function TeacherDashboard() {
   const [dashboardData, setDashboardData] = useState<TeacherDashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [addStudentOpen, setAddStudentOpen] = useState(false);
+
+  const handleStudentAdded = (student: StudentSummary) => {
+    // Refresh dashboard data to show new student
+    if (dashboardData) {
+      setDashboardData({
+        ...dashboardData,
+        stats: {
+          ...dashboardData.stats,
+          totalStudents: dashboardData.stats.totalStudents + 1,
+        },
+        students: [
+          ...dashboardData.students,
+          {
+            id: student.id,
+            userId: student.userId || 0,
+            name: student.name,
+            avatarUrl: student.avatarUrl,
+            lastPractice: undefined,
+            weeklyMinutes: 0,
+            currentStreak: student.currentStreak || 0,
+            totalPoints: student.totalPoints || 0,
+          },
+        ],
+      });
+    }
+  };
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -96,7 +124,20 @@ export function TeacherDashboard() {
       />
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Button
+          onClick={() => setAddStudentOpen(true)}
+          className="h-auto py-6 px-6 bg-gradient-to-r from-piano-pink to-pink-600 hover:from-pink-600 hover:to-piano-pink touch-target"
+          size="lg"
+        >
+          <div className="flex items-center gap-3 w-full">
+            <UserPlus className="h-6 w-6" />
+            <div className="flex-1 text-left">
+              <p className="font-semibold text-base">Add Student</p>
+              <p className="text-sm opacity-90">Enroll a new student</p>
+            </div>
+          </div>
+        </Button>
         <Button
           onClick={() => navigate('/assignments')}
           className="h-auto py-6 px-6 bg-gradient-to-r from-piano-purple to-piano-purple-dark hover:from-piano-purple-dark hover:to-piano-purple touch-target"
@@ -130,6 +171,13 @@ export function TeacherDashboard() {
 
       {/* Recent Activity */}
       <RecentActivityFeed activities={dashboardData.recentActivity} />
+
+      {/* Add Student Dialog */}
+      <AddStudentDialog
+        open={addStudentOpen}
+        onClose={() => setAddStudentOpen(false)}
+        onStudentAdded={handleStudentAdded}
+      />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import type {
   CompleteSignupResponse,
   StudentSummary,
   CreateStudentRequest,
+  TeacherCreateStudentRequest,
   TeacherDashboardData,
   StudentListItem,
   StudentDashboardData,
@@ -19,7 +20,9 @@ import type {
   ConsentFormData,
   ConsentStatusResponse,
   Badge,
-  StudentBadge
+  StudentBadge,
+  MagicLinkCheckResponse,
+  MagicLinkLoginResponse
 } from '@/types';
 
 const API_BASE_URL = import.meta.env.PROD
@@ -105,6 +108,26 @@ class ApiService {
 
   async deleteStudent(studentId: number): Promise<void> {
     await this.api.delete(`/api/students/${studentId}`);
+  }
+
+  // Teacher student management endpoints
+  async getStudioStudents(): Promise<StudentSummary[]> {
+    const response = await this.api.get<StudentSummary[]>('/api/students/studio');
+    return response.data;
+  }
+
+  async createStudentAsTeacher(data: TeacherCreateStudentRequest): Promise<StudentSummary> {
+    const response = await this.api.post<StudentSummary>('/api/students/studio', data);
+    return response.data;
+  }
+
+  async updateStudentAsTeacher(studentId: number, data: TeacherCreateStudentRequest): Promise<StudentSummary> {
+    const response = await this.api.put<StudentSummary>(`/api/students/studio/${studentId}`, data);
+    return response.data;
+  }
+
+  async deleteStudentAsTeacher(studentId: number): Promise<void> {
+    await this.api.delete(`/api/students/studio/${studentId}`);
   }
 
   // Student profile endpoints
@@ -340,6 +363,22 @@ class ApiService {
 
   async checkAndAwardBadges(): Promise<Badge[]> {
     const response = await this.api.post<Badge[]>('/api/badges/check');
+    return response.data;
+  }
+
+  // Magic Link endpoints (public - no auth needed)
+  async checkMagicLink(token: string): Promise<MagicLinkCheckResponse> {
+    const response = await axios.get<MagicLinkCheckResponse>(
+      `${API_BASE_URL}/api/magic-link/check/${token}`
+    );
+    return response.data;
+  }
+
+  async validateMagicLink(token: string): Promise<MagicLinkLoginResponse> {
+    const response = await axios.post<MagicLinkLoginResponse>(
+      `${API_BASE_URL}/api/magic-link/validate`,
+      { token }
+    );
     return response.data;
   }
 }
