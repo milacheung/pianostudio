@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What pieces are recommended for Grade 2 to develop left-hand independence?",
+    "ground_truth": "Minuet in D",
+    "tags": ["grade-2", "left-hand", "repertoire"]
+  },
+  {
+    "question": "What are the scale requirements for Grade 3?",
+    "ground_truth": "D major, B minor",
+    "tags": ["grade-3", "scales"]
+  },
+  {
+    "question": "How should a teacher introduce legato technique to a young beginner?",
+    "ground_truth": "sticky finger",
+    "tags": ["technique", "legato", "beginner"]
+  },
+  {
+    "question": "What is the most common weakness in Grade 2 sight-reading according to examiners?",
+    "ground_truth": "dotted-note patterns",
+    "tags": ["grade-2", "sight-reading", "examiner"]
+  },
+  {
+    "question": "What is the sight-reading requirement for Grade 1?",
+    "ground_truth": "8 bars",
+    "tags": ["grade-1", "sight-reading"]
+  },
+  {
+    "question": "What step-by-step approach helps students learn thumb crossing?",
+    "ground_truth": "isolation drill",
+    "tags": ["technique", "thumb-crossing"]
+  },
+  {
+    "question": "What do Grade 2 aural tests require students to identify about cadences?",
+    "ground_truth": "imperfect",
+    "tags": ["grade-2", "aural"]
+  },
+  {
+    "question": "How long should a Grade 3 student practice per day?",
+    "ground_truth": "30-45 minutes",
+    "tags": ["grade-3", "practice-time"]
+  },
+  {
+    "question": "What is the most common Grade 3 weakness in aural tests according to examiners?",
+    "ground_truth": "mood and dynamics",
+    "tags": ["grade-3", "aural", "examiner"]
+  },
+  {
+    "question": "What verbal technique helps students correctly play dotted rhythms?",
+    "ground_truth": "long-short",
+    "tags": ["technique", "rhythm", "dotted"]
+  }
+]

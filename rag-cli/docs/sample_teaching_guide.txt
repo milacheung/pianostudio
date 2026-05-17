@@ -1,0 +1,76 @@
+# PIANO PEDAGOGY TEACHING GUIDE (FICTIONAL SAMPLE)
+# Approaches to common teaching challenges at Grades 1-3.
+
+## Teaching Legato to Beginners
+
+Legato is often the first expressive technique a student learns. For beginners aged 6-10, use the following approach:
+
+**The "sticky finger" analogy**: Ask the student to imagine their fingers are sticky, holding each key down until the very last moment before lifting. This prevents the habit of bouncing and is easier to understand than abstract descriptions of legato.
+
+**Voice-led practice**: Play a simple 5-finger melody and ask the student to sing along while playing. The phrase-breathing of singing naturally shapes legato phrasing without requiring the student to think technically.
+
+**Slow mirror exercise**: Play the phrase at half tempo, asking the student to match your sound (not your technique). Students who listen to the sound rather than watch their hands develop legato faster.
+
+Recommended diagnostic: If a student cannot maintain legato for more than 2-3 notes, check thumb weight first. Most beginner legato failures come from a collapsing thumb at the knuckle joint, not finger coordination.
+
+## Developing Left-Hand Independence
+
+Left-hand independence is a milestone typically achieved between Grade 2 and Grade 3. Teachers report it as one of the most common sources of frustration at this level.
+
+Recommended sequence:
+
+**Weeks 1-2**: Left hand alone. Play the left-hand part of the assigned piece at 60% of performance tempo until it is automatic. Do not introduce hands-together practice until the left hand can play without conscious attention.
+
+**Week 3**: "Stop-and-start" hands-together. Play 2 bars together, stop, check both hands, continue. This builds coordination without panic.
+
+**Week 4**: Hands together at full tempo in short segments (4 bars maximum).
+
+Effective exercises for left-hand independence at Grade 2:
+- Hanon Exercise No. 1 (hands separately then together, focus on left-hand evenness)
+- Scale practice with the left hand louder than the right (reverses the typical student imbalance)
+- Alberti bass patterns on C, G, F chords (prepares waltz and sonata accompaniment styles)
+
+The pieces "Minuet in D" by L. Voss and "Spinning Wheel" by A. Merritt on the Grade 2 syllabus are particularly effective for developing left-hand independence. "Minuet in D" features a singing left-hand melody in the B section; "Spinning Wheel" has a fast left-hand accompaniment pattern that requires true independence of the left hand from the right.
+
+## Teaching Thumb Crossing
+
+Thumb crossing is required for scales beyond 5-finger position and appears as a challenge beginning at Grade 2-3 scale requirements.
+
+Technical analysis: The thumb crosses under fingers 3 or 4 (depending on the scale). The most common failure is "shoulder lifting" — the student raises their shoulder as the thumb crosses, causing arm tension that tightens the fingers.
+
+Step-by-step approach:
+
+**Isolation drill**: Practice the thumb-crossing motion alone, without the other fingers. The thumb tucks under at the base of finger 3. Practice 20 repetitions per hand daily before scale practice.
+
+**Slow-motion scale segments**: Take just 4 notes surrounding the thumb crossing (e.g., in C major right hand: D-E-F-G with thumb crossing under finger 3). Practice at MM=40 until the crossing is invisible.
+
+**"Flat hand" check**: After the thumb crosses, the hand should remain flat and relaxed. Have the student place a coin on the back of their hand as a balance indicator — if it falls, the wrist is rising unevenly.
+
+A thumb-crossing issue that persists beyond 4 weeks of focused work usually indicates insufficient finger independence at the base knuckle. Refer to Hanon Exercises 1-5 for corrective work before returning to scale practice.
+
+## Practice Time Recommendations by Grade
+
+The following daily practice times are recommended guidelines for typical progress toward exam readiness:
+
+- **Grade 1**: 15-20 minutes per day, 5-6 days per week
+- **Grade 2**: 20-30 minutes per day, 5-6 days per week
+- **Grade 3**: 30-45 minutes per day, 5-6 days per week
+- **Grade 4**: 45-60 minutes per day, 5-6 days per week
+
+For Grade 3 students, distribute practice time as follows: 10 minutes scales and technical work, 20-30 minutes repertoire divided equally between the three syllabus pieces. Students who practice scales first retain them better than students who do scales at the end of the session when fatigue reduces attention.
+
+## Teaching Dotted Rhythms
+
+Dotted rhythms (dotted quarter + eighth note patterns) are introduced at Grade 2 and become a marking criterion from Grade 3 onward.
+
+Common student error: the dotted note is not held long enough, and the short note arrives too early. This creates a "galloping" feel rather than the correct "long-short" pattern.
+
+Correction approach:
+
+**Verbal counting**: Have the student say "long-short" out loud while clapping. The "long" should feel almost uncomfortably long before releasing. This verbal anchor prevents the student from shortening the dotted note subconsciously.
+
+**Exaggeration first**: Ask the student to hold the dotted note three times as long as written, then gradually reduce toward the correct value. This builds physical memory of the long note before adding precision.
+
+**Subdivision exercise**: Have the student tap four equal sixteenth notes while you play the dotted rhythm, so they can feel exactly where the short note falls (on the fourth sixteenth-note subdivision).
+
+Dotted rhythms taught poorly become entrenched habits within 3 weeks. If a student has been playing a dotted-rhythm piece incorrectly for more than 2 sessions, stop the piece entirely and introduce the rhythm correction exercises above before returning.

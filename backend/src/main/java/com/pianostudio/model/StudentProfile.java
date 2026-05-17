@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "student_profiles")
@@ -58,6 +59,30 @@ public class StudentProfile {
 
     @Column(name = "last_practice_date")
     private LocalDate lastPracticeDate;
+
+    // Parent invite fields (for teacher-initiated onboarding)
+    @Column(name = "parent_email")
+    private String parentEmail;
+
+    @Column(name = "parent_invite_status")
+    @Builder.Default
+    private String parentInviteStatus = "none";  // none, invited, claimed
+
+    @Column(name = "parent_invited_at")
+    private LocalDateTime parentInvitedAt;
+
+    // Exam tracking — used by the pre-lesson brief RAG feature
+    @Column(name = "exam_board")
+    private String examBoard;
+
+    @Column(name = "exam_grade")
+    private String examGrade;
+
+    @Column(name = "exam_date")
+    private LocalDate examDate;
+
+    @Column(name = "exam_session_deadline")
+    private LocalDate examSessionDeadline;
 
     /**
      * Get the display name for this student.
